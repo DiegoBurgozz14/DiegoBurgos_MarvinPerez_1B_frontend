@@ -18,6 +18,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+                <li class="nav-item">
+          <a class="nav-link active"  href="index.html">Inicio</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link active"  href="clientes.html">Clientes</a>
         </li>
@@ -33,22 +36,90 @@
 </nav>
 </header>
 
-<main class="container- py-5">
-   <section class="card shadow border-0 rounded-4 mx-auto" style="max-width: 800px;">
-    <div class="card-body p-4">
-        <h1 class="text-center mb-2">Lista de clientes</h1>
-        <p class="text-center text-muted mb-4">Agregar clientes, editarlos o eliminarlos</p>
-        <div id="cards-container" class="cards-grid">
-            <!-- Inyeccion de datos -->
-        </div>
-    </div>
-   </section>
+<main class="container py-5">
+
+        <section class="text-center mb-5">
+            <h1 class="fw-bold">Registrar clientes</h1>
+            <p class="text-muted">
+                Agregar, editar o eliminar clientes
+            </p>
+        </section>
+
+        <section class="card shadow-sm mb-5">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Agregar cliente</h2>
+            </div>
+
+            <div class="card-body">
+                <!-- Formulario para agregar clientes -->
+                <form id="formCliente">
+                    <div class="form-group my-3">
+                        <label for="txtNombre" class="form-label">Nombre</label>
+                        <input type="text" id="txtName" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-3">
+                        <label for="txtApellido" class="form-label">Apellido</label>
+                        <input type="text" id="txtApellido" class="form-control" required>
+                    </div>
+
+                     <div class="form-group my-3">
+                        <label for="txtTelefono" class="form-label">Teléfono</label>
+                        <input type="text" id="txtTelefono" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-3">
+                        <label for="txtEmail" class="form-label">Correo Electrónico</label>
+                        <input type="email" id="txtEmail" class="form-control" required>
+                    </div>
+
+                     <div class="form-group my-3">
+                        <label for="txtDireccion" class="form-label">Dirección</label>
+                        <input type="text" id="txtDireccion" class="form-control" required>
+                    </div>
+
+                   
+
+                    <button type="submit" id="btnGuardar" class="btn btn-primary">Guardar Registro</button>
+                </form>
+            </div>
+        </section>
+
+
+        <section class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h2 class="h5 mb-0">Lista de clientes</h2>
+            </div>
+
+            <div class="card-body">
+
+                <div id="mensaje" class="alert d-none" role="alert"></div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Teléfono</th>
+                                <th>Email</th>
+                                <th>Dirección</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tablaClientes">
+                            <!-- Aquí se cargarán los clientes -->
+                            <td colspan="6">Cargando...</td>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
 
 </main>
     
-
-
-
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
